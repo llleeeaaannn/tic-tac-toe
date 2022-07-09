@@ -35,20 +35,14 @@ module Display
   def play_again_prompt
     puts "Would you like to play again?"
     puts "Type 'y' for Yes or 'n' for No."
-    play_again
   end
 
-  def play_again
-    response = gets.chomp.to_s.downcase
-    if response == "y"
-      Play.new
-    elsif response == "n"
-      puts "Thank you for playing, bye!"
-      return
-    else
-      puts "That is not a valid answer, please try again or click 'CTRL + C' to exit"
-      play_again
-    end
+  def thank_you
+    puts 'Thank you for playing, bye!'
+  end
+
+  def invalid_input
+    puts "That is not a valid answer, please try again or click 'CTRL + C' to exit"
   end
 
 end

@@ -6,7 +6,6 @@ require_relative 'player.rb'
 
 
 class Play
-
   include Display
 
   def initialize
@@ -14,7 +13,6 @@ class Play
     game.setup
     game.next_turn
   end
-
 end
 
 Play.new

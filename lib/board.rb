@@ -20,16 +20,12 @@ class Board
     puts
   end
 
-  def valid_move(number)
-    [1, 2, 3, 4, 5, 6, 7, 8, 9].include?(number)
-  end
+  def update_board(symbol)
+    loop do
+      number = gets.chomp.to_i
+      return cells[number - 1] = symbol if cells.include?(number)
 
-  def update_board(number, symbol)
-    if cells.include?(number)
-      cells[number - 1] = symbol
-    else
-      puts "That square is invalid or already taken, please try again"
-      update_board(gets.chomp.to_i, symbol)
+      puts 'That square is invalid or already taken, please try again'
     end
   end
 
@@ -50,7 +46,7 @@ class Board
         won = true
       end
     end
-    return won
+    won
   end
 
 end
